@@ -1,1 +1,1 @@
-# vue-basic
+1. 建立一个compile , 初始化根元素 #app

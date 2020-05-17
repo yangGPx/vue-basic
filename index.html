@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue原理-简易版</title>
+</head>
+<body>
+  <!-- 通过自己写一个简易版的mvvm框架，理解vue的原理 -->
+  <div id="app">
+    <div v-text="person.name" id="aaa"></div>
+    <div v-html="demoHtml" id="aaa"></div>
+    <button v-on:click="doClick">绑定了点击事件</button>
+    <input type="text" v-model="person.thrid.a">
+    <p>{{ person.name }} --- {{ person.age }}</p>
+    <p>{{ person.thrid.a }}</p>
+  </div>
+  <script src="./js/obServer.js"></script>
+  <script src="./js/mvvm.js"></script>
+  <script>
+    const mvvm = new Mvvm({
+      el: '#app',
+      data: {
+        person: {
+          name: '杨桂鹏',
+          age: 22,
+          thrid: {
+            a: 'xxx',
+          },
+        },
+        text: '这是一段测试文字',
+        demoHtml: '<b>这是一段HTML标签文本</b>'
+      },
+      methods: {
+        doClick() {
+          console.log('触发了点击事件')
+        }
+      }
+    })
+  </script>
+</body>
+</html>
