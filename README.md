@@ -1,1 +1,3 @@
-1. 建立一个compile , 初始化根元素 #app
+# vue简易框架
+1. git clone
+2. use vsCode live server
